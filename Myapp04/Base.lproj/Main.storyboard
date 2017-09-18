@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Myapp04" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +22,96 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-T9-6HL">
+                                <rect key="frame" x="16" y="20" width="343" height="66.5"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qbF-Z7-f8y">
+                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="66.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLi-QV-xFs">
+                                        <rect key="frame" x="274.5" y="0.0" width="68.5" height="66.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="猜數字"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEv-M8-6J1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JLi-QV-xFs" firstAttribute="top" secondItem="eoY-T9-6HL" secondAttribute="top" id="8ud-nC-auu"/>
+                                    <constraint firstItem="JLi-QV-xFs" firstAttribute="leading" secondItem="qbF-Z7-f8y" secondAttribute="trailing" constant="16" id="DxA-Jy-MtK"/>
+                                    <constraint firstAttribute="bottom" secondItem="JLi-QV-xFs" secondAttribute="bottom" id="HgL-L8-kZX"/>
+                                    <constraint firstItem="qbF-Z7-f8y" firstAttribute="leading" secondItem="eoY-T9-6HL" secondAttribute="leading" id="Hwo-6z-Fxe"/>
+                                    <constraint firstAttribute="bottom" secondItem="qbF-Z7-f8y" secondAttribute="bottom" id="Yop-qf-Icp"/>
+                                    <constraint firstItem="JLi-QV-xFs" firstAttribute="width" secondItem="eoY-T9-6HL" secondAttribute="width" multiplier="0.2" id="lqE-65-FvT"/>
+                                    <constraint firstItem="qbF-Z7-f8y" firstAttribute="top" secondItem="eoY-T9-6HL" secondAttribute="top" id="r27-kT-lmu"/>
+                                    <constraint firstAttribute="trailing" secondItem="JLi-QV-xFs" secondAttribute="trailing" id="wCe-Bl-F5D"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uwt-sC-XDA">
+                                <rect key="frame" x="16" y="590.5" width="343" height="66.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-yC-s0C">
+                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="66.5"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="重玩"/>
+                                        <connections>
+                                            <action selector="doReset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwJ-Vx-YRO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGe-I8-oWN">
+                                        <rect key="frame" x="117.5" y="0.0" width="108" height="66.5"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="設定"/>
+                                        <connections>
+                                            <action selector="doSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ot-BO-Xpb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxE-hd-YB4">
+                                        <rect key="frame" x="235.5" y="0.0" width="107.5" height="66.5"/>
+                                        <color key="backgroundColor" red="0.69523712106475122" green="0.94945323467254639" blue="0.14127340717058887" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="離開"/>
+                                        <connections>
+                                            <action selector="doExit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V41-wb-H7M"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="1.123 = &gt; 1A2B" translatesAutoresizingMaskIntoConstraints="NO" id="DQL-91-Z19">
+                                <rect key="frame" x="16" y="86.5" width="343" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Uwt-sC-XDA" firstAttribute="top" secondItem="DQL-91-Z19" secondAttribute="bottom" id="0P6-fz-r8e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uwt-sC-XDA" secondAttribute="trailing" id="CY1-ao-HJC"/>
+                            <constraint firstItem="DQL-91-Z19" firstAttribute="top" secondItem="eoY-T9-6HL" secondAttribute="bottom" id="ClM-wA-dM3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eoY-T9-6HL" secondAttribute="trailing" id="FyI-Zx-flV"/>
+                            <constraint firstItem="Uwt-sC-XDA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="OQS-RJ-Dlj"/>
+                            <constraint firstItem="DQL-91-Z19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Wq3-XP-JfZ"/>
+                            <constraint firstItem="eoY-T9-6HL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zs7-Xy-meQ"/>
+                            <constraint firstItem="eoY-T9-6HL" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="ag9-6a-2GI"/>
+                            <constraint firstItem="eoY-T9-6HL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="azr-g0-P0F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Uwt-sC-XDA" secondAttribute="bottom" constant="10" id="jGE-vA-mg8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DQL-91-Z19" secondAttribute="trailing" id="xGl-45-1C5"/>
+                            <constraint firstItem="Uwt-sC-XDA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ym4-I3-T9X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnGuess" destination="JLi-QV-xFs" id="7GX-SN-YFG"/>
+                        <outlet property="textGuess" destination="qbF-Z7-f8y" id="6AQ-35-Rsq"/>
+                        <outlet property="textHist" destination="DQL-91-Z19" id="hp7-QY-eKY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
